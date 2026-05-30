@@ -1,7 +1,6 @@
 package tests;
 
 import com.github.javafaker.Faker;
-import io.qameta.allure.*;
 import jdk.jfr.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -16,15 +15,6 @@ public class ProjectTest extends BaseTest {
             groups = "Positive",
             enabled = true)
     @Description("Проверка удаления проекта.")
-    @Epic("Проверка создания / удаления проекта.")
-    @Feature("Проверка удаления проекта.")
-    @Story("Проверка успешной авторизации, создания проекта и удаления проекта.")
-    @Severity(SeverityLevel.CRITICAL)
-    @Link("https://github.com/goodrazer/PageObjectSauceDemo/blob/master/README.md")
-    @TmsLink("TestCaseLink")
-    @Issue("LinkBUG")
-    @Flaky
-    @Owner("Malevaniy Anton")
     public void checkCreateProject() throws InterruptedException {
         open("/login");
         $(shadowCss("#accept", "#usercentrics-cmp-ui")).click();
