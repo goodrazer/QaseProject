@@ -30,6 +30,7 @@ public class BaseTest {
         options.addArguments("--disable-popup-blocking");
         options.addArguments("--disable-infobars");
         options.setCapability("unhandledPromptBehavior", UnexpectedAlertBehaviour.ACCEPT);
+        options.addArguments("--headless");
         Configuration.browserCapabilities = options;
     }
 
