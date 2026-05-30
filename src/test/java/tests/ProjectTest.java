@@ -1,15 +1,30 @@
 package tests;
 
 import com.github.javafaker.Faker;
+import io.qameta.allure.*;
+import jdk.jfr.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class ProjectTest extends BaseTest {
 
-    @Test
+    @Test (testName = "Проверка авторизации, создания и удаления проекта.",
+            description = "Проверка авторизации, создания и удаления проекта.",
+            priority = 1,
+            groups = "Positive",
+            enabled = true)
+    @Description("Проверка удаления проекта.")
+    @Epic("Проверка создания / удаления проекта.")
+    @Feature("Проверка удаления проекта.")
+    @Story("Проверка успешной авторизации, создания проекта и удаления проекта.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Link("https://github.com/goodrazer/PageObjectSauceDemo/blob/master/README.md")
+    @TmsLink("TestCaseLink")
+    @Issue("LinkBUG")
+    @Flaky
+    @Owner("Malevaniy Anton")
     public void checkCreateProject() throws InterruptedException {
         open("/login");
         $(shadowCss("#accept", "#usercentrics-cmp-ui")).click();
